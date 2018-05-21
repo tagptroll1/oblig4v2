@@ -336,8 +336,10 @@ public class SortedTreeMap<K extends Comparable<? super K>, V> implements ISorte
      */
     @Override
     public Iterable<V> values() {
-        return () -> StreamSupport.stream(entries().spliterator(), false).map(entry -> entry.value).iterator();
-
+        return () -> StreamSupport
+                .stream(entries().spliterator(), false)
+                .map(entry -> entry.value)
+                .iterator();
     }
 
     /**
